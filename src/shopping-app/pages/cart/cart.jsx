@@ -28,7 +28,7 @@ export const Cart = () => {
   
 <div> 
   <br/>
-  <div className=" border-gray-100/30 flex lg:w-72 max-w-xs flex-col lg:ml-16 sm:ml-12 self-center overflow-hidden rounded-lg border bg-gray-100  ">
+  <div className=" border-gray-100/30 flex lg:w-72 max-w-xs flex-col lg:ml-16 sm:ml-4 self-center overflow-hidden rounded-lg border bg-gray-100  ">
                 <div className="cart_total">
                     <p  className="mt-4 font-bold lg:mb-16 text-center text-blue-500 dark:text-blue-700 sm:text-xl">Cart Totals</p>
                     
