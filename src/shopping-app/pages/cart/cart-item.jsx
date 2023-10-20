@@ -24,7 +24,7 @@ export const Carton = (props) => {
     }
     
   return(
-<div className="lg:w-84 sm:w-84 h-40 m-8 flex shadow shadow-black hover:shadow-xl p-6 bg-white border border-gray-200  dark:bg-white dark:border-gray-700">
+<div className="lg:w-84 sm:w-84 h-48 m-8 flex shadow shadow-black hover:shadow-xl p-6 bg-white border border-gray-200  dark:bg-white dark:border-gray-700">
           <div className="w-28 object-fill"> <img src ={ img } className="h-24" /></div>
     <div className=" ml-16 ">
         <p><b>{name}</b></p>
