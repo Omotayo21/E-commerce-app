@@ -34,21 +34,26 @@ This is a shopping app built with React, Tailwind CSS, Redux, Firebase, Material
 
    git clone https://github.com/your-username/E-commerce-app.git
    cd E-commerce-app
+   ```
 
 2. **Install Dependencies:**
 
-  ```bash
-  npm install 
+```bash
+
+  npm install react-redux @reduxjs/toolkit react-router-dom material-ui-core react-toastify firebase phosphor-react framer-motion
+```
 
 3. **Set Up Firebase:**
 
    Create a Firebase project and set up authentication and a real-time database.
    Update Firebase configuration in your app.
+   
 4. **Run the App:**
 
   ```bash
 
    npm run dev
+```
 
 5. **Open in Browser:**
 
