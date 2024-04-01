@@ -227,7 +227,8 @@ const Navbar = ({PRODUCTS}) => {
             <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">  Settings </a>
             <button className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" onClick={handleSignOut} > Sign out </button> </div>
           </div> 
-      )}      </div> )  : ( <button className=" bg-blue-600 text-white p-2 font-medium rounded-md ml-12" onClick={back}> login</button>)
+      )}      </div> )  : null 
+         
      }
       </div>
       
