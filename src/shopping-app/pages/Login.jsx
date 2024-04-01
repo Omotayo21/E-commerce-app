@@ -212,7 +212,7 @@ function Login() {
                 <button
                   onClick={loginAction}
                   type="submit"
-                  className="w-full text-white bg-blue-700 hover:bg-primary-700 focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center"
+                  className={`w-full text-white bg-blue-700 hover:bg-primary-700 focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center ${isLoading ? 'opacity-50 cursor-not-allowed' : ''}`}
                 >
                      {isLoading ? 'Processing...' : 'Sign in'}
                 </button>
