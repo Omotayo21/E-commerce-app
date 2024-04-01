@@ -14,7 +14,7 @@ function Register() {
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
+const [isLoading, setIsLoading] = useState(false);
   const [validationErrors, setValidationErrors] = useState({});
 
   const validateForm = () => {
@@ -45,6 +45,7 @@ function Register() {
         await createUserWithEmailAndPassword(authentication, email, password);
         const user = authentication.currentUser;
         const userUid = user.uid;
+        setIsLoading(true)
         const response = await fetch(
           `https://my-shopping-app-dfa7b-default-rtdb.firebaseio.com/users/${userUid}/cartItems.json`,
           {
@@ -56,6 +57,7 @@ function Register() {
             }),
           }
         );
+        
       } catch (error) {
         console.log(error);
       }
@@ -182,10 +184,10 @@ function Register() {
                 </div>
                 <button
                   type="submit"
-                  className="w-full text-white bg-blue-700 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
+                  className={`w-full text-white bg-blue-700 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center${isLoading ? 'opacity-50 cursor-not-allowed' : ''}`}
                   onClick={signUp}
                 >
-                  Create an account
+                    {isLoading ? 'Processing...' : 'Sign Up'}
                 </button>
                 <button
                   className="w-full text-white bg-blue-700 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm pl-20 py-2.5 text-center flex flex-row"
