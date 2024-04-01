@@ -97,6 +97,7 @@ const Navbar = ({PRODUCTS}) => {
      await signOut(authentication);
     // dispatch(userLoggedOut(user)); // Dispatch the action to update Redux state
     setUser(null)
+      navigate("/")
    } catch (error) {
      console.error("Error signing out:", error);
    }
@@ -133,7 +134,7 @@ const Navbar = ({PRODUCTS}) => {
   
  
   <div class="items-center mt-80 -mb-6 ml-4 absolute left-0 justify-between gap-5 w-full flex order-1 ">
-    <ul class="flex flex-col p-4 md:p-0 font-medium -ml-4 -mt-9 bg-gray-50 md:flex-row md:space-x-16 md:mt-0  md:bg-white dark:bg-gray-800 md:dark:bg-gray-900  ">
+    <ul class="flex flex-col p-4 md:p-0 font-medium -ml-4 -mt-7 bg-gray-50 md:flex-row md:space-x-16 md:mt-0  md:bg-white dark:bg-gray-800 md:dark:bg-gray-900  ">
          <li>
         <a  href="/home" className="block py-2 pl-3 pr-4 text-black rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700 focus:text-blue-500" aria-current="page">Home</a>
       </li>
