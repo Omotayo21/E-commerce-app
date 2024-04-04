@@ -45,10 +45,11 @@ function Login() {
 
     if (isValid) {
       try {
+        setIsLoading(true)
         await signInWithEmailAndPassword(authentication, email, password);
         const user = authentication.currentUser;
         //dispatch(userLoggedIn(user));
-        setIsLoading(true);
+        
         const userUid = user.uid;
 
         const response = await fetch(
