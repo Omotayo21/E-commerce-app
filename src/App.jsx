@@ -34,6 +34,7 @@ function App() {
 
   useEffect(() => {
     dispatch(fetchData());
+    return () => { fetchData() };
   }, [dispatch]);
 
   const userUID = 
