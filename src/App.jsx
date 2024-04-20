@@ -32,14 +32,37 @@ function App() {
   const [isFirstRender, setIsFirstRender] = useState(true);
   const [showNotification, setShowNotification] = useState(false);
 
-  useEffect(() => {
-    dispatch(fetchData());
-    
-  }, [dispatch]);
+  //useEffect(() => {
+    //dispatch(fetchData());
+    // }, [dispatch]);
 
   const userUID = 
      authentication?.currentUser?.uid;
-    
+  
+    const getCartDataFromLocalStorage = () => {
+    const storedData = localStorage.getItem('cartData');
+    if (storedData) {
+      const cartData = JSON.parse(storedData);
+      dispatch(cartActions.replaceData(cartData));
+    }
+  };
+
+  // Fetch data from the database only if it's not available in local storage
+  useEffect(() => {
+    getCartDataFromLocalStorage();
+    if (!cart.itemsList) {
+      dispatch(fetchData());
+    }
+  }, [dispatch, cart.itemsList]);
+
+  // Update cart data in local storage whenever it changes
+  useEffect(() => {
+    if (!isFirstRender) {
+      localStorage.setItem('cartData', JSON.stringify(cart));
+    } else {
+      setIsFirstRender(false);
+    }
+  }, [cart, isFirstRender]);
 
   useEffect(() => {
     if (isFirstRender) {
