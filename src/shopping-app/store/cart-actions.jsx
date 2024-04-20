@@ -1,8 +1,10 @@
 import { uiActions } from "./ui-slice";
+import { useDispatch } from 'react-redux';
 import { cartActions } from "./cart-slice";
 import { authentication } from "../../config/firebase";
 export const fetchData = () => {
-  return async (dispatch) => {
+  const dispatch = useDispatch();
+  return async () => {
     const fetchHandler = async () => {
       const userUID = authentication?.currentUser?.uid;
       const res = await fetch(
@@ -17,12 +19,7 @@ export const fetchData = () => {
       dispatch(cartActions.replaceData(cartData));
     } catch(error) {
       console.log(error)
-      //dispatch(uiActions.showNotification({
-          //open: true,
-          //message: "ERR, INTERNET DISCONNECTED PLEASE TRY AGAIN",
-          //type: "error",
-        //})
-      //);
+      
     }
   };
 };
