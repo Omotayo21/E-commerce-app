@@ -62,7 +62,7 @@ const Details = () => {
   </div>
        <button
 className="bg-blue-700 text-white border rounded-lg border-white h-12 w-48 font-bold hover:border-blue-900">
-      <Link to="/" >Continue shopping</Link>
+      <Link to="/shop" >Continue shopping</Link>
       </button>
     </div>
   )
