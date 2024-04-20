@@ -17,6 +17,7 @@ export const fetchData = () => {
     try {
       const cartData = await fetchHandler();
       dispatch(cartActions.replaceData(cartData));
+      localStorage.setItem('cartData', JSON.stringify(cartData));
     } catch(error) {
       console.log(error)
       
