@@ -84,9 +84,9 @@ const [isLoading, setIsLoading] = useState(false);
 
   return (
     <>
-      <section className="bg-white h-full mt-36">
+      <section className="bg-white h-full mt-12">
         <div className="flex flex-col items-center justify-center">
-          <div className="w-full bg-blue-200 rounded-lg shadow border mt-2 sm:max-w-md xl:p-0 border-blue-700">
+          <div className="w-full rounded-lg shadow border mt-2 sm:max-w-md xl:p-0 border-blue-700">
             <div className="p-6 space-y-4 sm:p-8">
               <h1 className="text-xl font-bold leading-tight tracking-tight text-blue-900 sm:text-2xl">
                 Create an account
